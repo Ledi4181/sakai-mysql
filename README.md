@@ -1,18 +1,17 @@
-# Sakai-mysql
-Dockerized sakai v20.5 and msql v5.5
+# Dockerizing Sakai v20.5 and Msql v5.5 With Customed For Our Sakai. 
 
-# Building Mysql Docker Image for Sakai
+Firstly, Build Mysql Docker Image:
 
-docker build -t mysql -f ./Dockerfile.mysql .
+`docker build -t mysql -f ./Dockerfile.mysql .`
 
-# Building Sakai Docker Image
+Secondly, Build Sakai Docker Image:
 
-docker build --build-arg release=20.5 -t sakai -f ./Dockerfile.sakai .
+`docker build --build-arg release=20.5 -t sakai -f ./Dockerfile.sakai .`
 
-# Launching Mysql Container
+Then Launch Mysql Container:
 
-docker run -d --name mysql -p 3306:3306 mysql
+`docker run -d --name mysql -p 3306:3306 mysql`
 
-# Launching Sakai Container linked with Mysql container
+After Launching Mysql Container, Now Launch Sakai Container linked with Mysql container
 
-docker run -d --name sakai -p 8080:8080 --link mysql:mysql sakai
+`docker run -d --name sakai -p 8080:8080 --link mysql:mysql sakai`
