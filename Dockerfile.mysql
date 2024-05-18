@@ -1,0 +1,8 @@
+FROM mysql:5.5
+
+ENV MYSQL_ROOT_PASSWORD=examplerootpassword
+ENV MYSQL_DATABASE=sakai
+ENV MYSQL_USER=sakai
+ENV MYSQL_PASSWORD=examplepassword
+
+CMD ["--character-set-server=utf8", "--collation-server=utf8_general_ci"]
